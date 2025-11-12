@@ -1,0 +1,18 @@
+{% extends 'info/layout.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+    <h1>Зарегистрированные люди</h1>
+    {% if pers %}
+        {% for per in pers %}
+            <div class="alert alert-warning">
+                <h3>{{ per.name }}</h3>
+                <p>{{ per.age }}</p>
+                <p>{{ per.date }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h4>{{ error }}</h4>
+    {% endif %}
+{% endblock %}

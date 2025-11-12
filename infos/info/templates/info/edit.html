@@ -1,0 +1,17 @@
+{% extends 'info/layout.html' %}
+
+{% block title %}Редактирование данных пользователя{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Форма по редактированию данных</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.name }}<br>
+            {{ form.age }}<br>
+            {{ form.date }}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">Редактировать данные</button>
+        </form>
+    </div>
+{% endblock %}
